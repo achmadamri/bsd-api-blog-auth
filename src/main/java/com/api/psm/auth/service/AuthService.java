@@ -105,8 +105,7 @@ public class AuthService {
 		
 		optTbAuthByEmail.ifPresentOrElse(tbAuth -> {
 			String token = tokenUtil.generate(optTbAuthByEmail.get().getTbaEmail(), new String[] {
-					env.getProperty("services.rest.member.url"),
-					env.getProperty("services.rest.payroll.url")
+					env.getProperty("services.eblo.api.psm.member")
 			});
 			
 			tbAuth.setTbaTokenSalt(TokenUtil.keyMap.get(tbAuth.getTbaEmail()));
@@ -133,7 +132,7 @@ public class AuthService {
 			
 			optTbAuthByIdLogin.ifPresentOrElse(tbAuth -> {
 				String token = tokenUtil.generate(optTbAuthByIdLogin.get().getTbaEmail(), new String[] {
-						env.getProperty("services.rest.member.url")
+						env.getProperty("services.eblo.api.psm.member")
 				});
 				
 				tbAuth.setTbaTokenSalt(TokenUtil.keyMap.get(tbAuth.getTbaEmail()));
@@ -191,7 +190,7 @@ public class AuthService {
 		
 		optTbAuth.ifPresentOrElse(tbAuth -> {
 			tokenUtil.invalidate(tbAuth.getTbaEmail(), new String[] {
-					env.getProperty("services.rest.member.url")
+					env.getProperty("services.eblo.api.psm.member")
 			});
 			
 			responseModel.setStatus("200");
