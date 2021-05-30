@@ -22,9 +22,6 @@ import javax.persistence.Table;
 public class TbAuth implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	public final static String statusActive = "active";
-	public final static String statusNonActive = "non active";
-
 	@Id
 	@Column(name="tba_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

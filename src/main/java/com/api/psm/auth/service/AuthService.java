@@ -42,7 +42,7 @@ public class AuthService {
 		TbAuth exampleTbAuth = new TbAuth();
 		exampleTbAuth.setTbaEmail(requestModel.getTbaEmail());
 		exampleTbAuth.setTbaPassword(requestModel.getTbaPassword());
-		exampleTbAuth.setTbaStatus(TbAuth.statusActive);
+		exampleTbAuth.setTbaStatus(TbAuthRepository.Active);
 		Optional<TbAuth> optTbAuth = tbAuthRepository.findOne(Example.of(exampleTbAuth));
 		
 		optTbAuth.ifPresentOrElse(tbAuth -> {
@@ -81,7 +81,7 @@ public class AuthService {
 			SimpleMapper simpleMapper = new SimpleMapper();
 			tbAuth = (TbAuth) simpleMapper.assign(requestModel, tbAuth);
 			
-			tbAuth.setTbaStatus(TbAuth.statusActive);
+			tbAuth.setTbaStatus(TbAuthRepository.Active);
 			tbAuth.setTbaCreateDate(new Date());
 			tbAuth.setTbaCreateId(0);
 			tbAuthRepository.save(tbAuth);
@@ -100,7 +100,7 @@ public class AuthService {
 		TbAuth exampleTbAuthByEMail = new TbAuth();
 		exampleTbAuthByEMail.setTbaEmail(requestModel.getTbaEmail());
 		exampleTbAuthByEMail.setTbaPassword(requestModel.getTbaPassword());
-		exampleTbAuthByEMail.setTbaStatus(TbAuth.statusActive);
+		exampleTbAuthByEMail.setTbaStatus(TbAuthRepository.Active);
 		Optional<TbAuth> optTbAuthByEmail = tbAuthRepository.findOne(Example.of(exampleTbAuthByEMail));
 		
 		optTbAuthByEmail.ifPresentOrElse(tbAuth -> {
@@ -127,7 +127,7 @@ public class AuthService {
 			TbAuth exampleTbAuthByIdLogin = new TbAuth();
 			exampleTbAuthByIdLogin.setTbaIdLogin(requestModel.getTbaIdLogin());
 			exampleTbAuthByIdLogin.setTbaPassword(requestModel.getTbaPassword());
-			exampleTbAuthByIdLogin.setTbaStatus(TbAuth.statusActive);
+			exampleTbAuthByIdLogin.setTbaStatus(TbAuthRepository.Active);
 			Optional<TbAuth> optTbAuthByIdLogin = tbAuthRepository.findOne(Example.of(exampleTbAuthByIdLogin));
 			
 			optTbAuthByIdLogin.ifPresentOrElse(tbAuth -> {
@@ -185,7 +185,7 @@ public class AuthService {
 		
 		TbAuth exampleTbAuth = new TbAuth();
 		exampleTbAuth.setTbaEmail(requestModel.getEmail());
-		exampleTbAuth.setTbaStatus(TbAuth.statusActive);
+		exampleTbAuth.setTbaStatus(TbAuthRepository.Active);
 		Optional<TbAuth> optTbAuth = tbAuthRepository.findOne(Example.of(exampleTbAuth));
 		
 		optTbAuth.ifPresentOrElse(tbAuth -> {
