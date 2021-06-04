@@ -124,36 +124,8 @@ public class AuthService {
 				responseModel.setError(e.getMessage());
 			}
 		}, () -> {
-			TbAuth exampleTbAuthByIdLogin = new TbAuth();
-			exampleTbAuthByIdLogin.setTbaIdLogin(requestModel.getTbaIdLogin());
-			exampleTbAuthByIdLogin.setTbaPassword(requestModel.getTbaPassword());
-			exampleTbAuthByIdLogin.setTbaStatus(TbAuthRepository.Active);
-			Optional<TbAuth> optTbAuthByIdLogin = tbAuthRepository.findOne(Example.of(exampleTbAuthByIdLogin));
-			
-			optTbAuthByIdLogin.ifPresentOrElse(tbAuth -> {
-				String token = tokenUtil.generate(optTbAuthByIdLogin.get().getTbaEmail(), new String[] {
-						env.getProperty("services.eblo.api.psm.member")
-				});
-				
-				tbAuth.setTbaTokenSalt(TokenUtil.keyMap.get(tbAuth.getTbaEmail()));
-				
-				try {
-					requestModel.setEmail(optTbAuthByIdLogin.get().getTbaEmail());
-					requestModel.setToken(token);
-					Claims claims = tokenUtil.claims(requestModel);
-					responseModel.setClaims(claims);
-					
-					responseModel.setToken(token);
-					responseModel.setStatus("200");
-					responseModel.setMessage("Auth generated");
-				} catch (Exception e) {
-					responseModel.setStatus("500");
-					responseModel.setError(e.getMessage());
-				}
-			}, () -> {
-				responseModel.setStatus("401");
-				responseModel.setError("Invalid login");
-			});
+			responseModel.setStatus("401");
+			responseModel.setError("Invalid login");
 		});
 		
 		return responseModel;

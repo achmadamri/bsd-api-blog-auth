@@ -42,12 +42,6 @@ public class TbAuth implements Serializable {
 	@Column(name="tba_email")
 	private String tbaEmail;
 
-	@Column(name="tba_member_id")
-	private String tbaMemberId;
-
-	@Column(name="tba_id_login")
-	private String tbaIdLogin;
-
 	@Column(name="tba_password")
 	private String tbaPassword;
 
@@ -103,22 +97,6 @@ public class TbAuth implements Serializable {
 
 	public void setTbaEmail(String tbaEmail) {
 		this.tbaEmail = tbaEmail;
-	}
-
-	public String getTbaMemberId() {
-		return tbaMemberId;
-	}
-
-	public void setTbaMemberId(String tbaMemberId) {
-		this.tbaMemberId = tbaMemberId;
-	}
-
-	public String getTbaIdLogin() {
-		return tbaIdLogin;
-	}
-
-	public void setTbaIdLogin(String tbaIdLogin) {
-		this.tbaIdLogin = tbaIdLogin;
 	}
 
 	public String getTbaPassword() {
