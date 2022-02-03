@@ -8,11 +8,11 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.eblo.api.psm.auth</groupId>
-	<artifactId>eblo-api-psm-auth</artifactId>
+	<groupId>com.bsd.api.dms.auth</groupId>
+	<artifactId>bsd-api-dms-auth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eblo-api-psm-auth</name>
-	<description>eblo-api-psm-auth</description>
+	<name>bsd-api-dms-auth</name>
+	<description>bsd-api-dms-auth</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -41,12 +41,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-twitter</artifactId>
-			<version>1.1.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -56,12 +50,6 @@
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-twitter</artifactId>
-			<version>1.1.2.RELEASE</version>
 		</dependency>
 
 		<dependency>
