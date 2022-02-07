@@ -1,6 +1,6 @@
 -- MariaDB dump 10.17  Distrib 10.4.14-MariaDB, for Win64 (AMD64)
 --
--- Host: localhost    Database: dms_api_psm_auth
+-- Host: localhost    Database: bsd_api_dms_auth
 -- ------------------------------------------------------
 -- Server version	10.4.22-MariaDB
 
@@ -32,8 +32,9 @@ CREATE TABLE `tb_auth` (
   `tba_password` varchar(32) DEFAULT NULL,
   `tba_status` varchar(20) DEFAULT NULL,
   `tba_token_salt` varchar(36) DEFAULT NULL,
+  `tba_role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`tba_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +43,7 @@ CREATE TABLE `tb_auth` (
 
 LOCK TABLES `tb_auth` WRITE;
 /*!40000 ALTER TABLE `tb_auth` DISABLE KEYS */;
-INSERT INTO `tb_auth` VALUES (1,'2019-09-03 15:43:36',0,'2020-07-30 10:20:33',0,'admin@mail.com','202cb962ac59075b964b07152d234b70','active','jnsr8q8t7dzgqv8qqmkfsffc5mqdn5fec4af'),(2,'2021-11-04 12:00:07',0,NULL,NULL,'pic1@mail.com','202cb962ac59075b964b07152d234b70','active','ng843n6ocg719kklqklb5814t9n2ahilj9zv'),(3,'2021-11-04 12:12:24',0,NULL,NULL,'pic2@mail.com','202cb962ac59075b964b07152d234b70','active','b3n95p03tsdpm9fya84cnelibj9u34xffz6j'),(4,'2021-11-04 12:13:34',0,NULL,NULL,'pic3@mail.com','202cb962ac59075b964b07152d234b70','active','zxfxjhji09xdf66s3usg6ro49l76ckrcmhyl');
+INSERT INTO `tb_auth` VALUES (1,'2019-09-03 15:43:36',0,'2020-07-30 10:20:33',0,'admin@mail.com','202cb962ac59075b964b07152d234b70','active','jnsr8q8t7dzgqv8qqmkfsffc5mqdn5fec4af',NULL),(2,'2021-11-04 12:00:07',0,NULL,NULL,'pic1@mail.com','202cb962ac59075b964b07152d234b70','active','ng843n6ocg719kklqklb5814t9n2ahilj9zv',NULL),(3,'2021-11-04 12:12:24',0,NULL,NULL,'pic2@mail.com','202cb962ac59075b964b07152d234b70','active','b3n95p03tsdpm9fya84cnelibj9u34xffz6j',NULL),(4,'2021-11-04 12:13:34',0,NULL,NULL,'pic3@mail.com','202cb962ac59075b964b07152d234b70','active','zxfxjhji09xdf66s3usg6ro49l76ckrcmhyl',NULL),(5,'2022-02-07 09:12:44',0,NULL,NULL,'pic4@mail.com','202cb962ac59075b964b07152d234b70','active','ni5ju0wgw0l4x3gxoq0cgh3jn3lyvejl5aq8',NULL),(6,'2022-02-07 09:48:32',0,NULL,NULL,'pic6@mail.com','202cb962ac59075b964b07152d234b70','active','onlidhsdmmgz9k8gxzq2dfazrhshyx9zv53p','GROSIR');
 /*!40000 ALTER TABLE `tb_auth` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-03 17:59:30
+-- Dump completed on 2022-02-07 17:13:47

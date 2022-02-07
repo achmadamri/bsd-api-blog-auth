@@ -1,1 +1,1 @@
-c:\xampp\mysql\bin\mysqldump.exe -uroot -pP@55w0rd bsd_api_dms_auth > bsd_api_dms_auth.sql
+c:\xampp\mysql\bin\mysqldump.exe -uroot -pP@55w0rd bsd_api_dms_auth > C:\Users\achma\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\bsd-api-dms-auth\bsd_api_dms_auth.sql
