@@ -107,10 +107,10 @@ public class AuthService {
 
 		optTbAuthByEmail.ifPresentOrElse(tbAuth -> {
 			String token = tokenUtil.generate(optTbAuthByEmail.get().getTbaEmail(), new String[] {
-					env.getProperty("services.eblo.api.psm.member"),
-					env.getProperty("services.eblo.api.psm.order"),
-					env.getProperty("services.eblo.api.psm.product"),
-					env.getProperty("services.eblo.api.psm.report")
+					env.getProperty("services.bsd.api.dms.member"),
+					env.getProperty("services.bsd.api.dms.order"),
+					env.getProperty("services.bsd.api.dms.product"),
+					env.getProperty("services.bsd.api.dms.report")
 			});
 			
 			tbAuth.setTbaTokenSalt(TokenUtil.keyMap.get(tbAuth.getTbaEmail()));
@@ -167,10 +167,10 @@ public class AuthService {
 		
 		optTbAuth.ifPresentOrElse(tbAuth -> {
 			tokenUtil.invalidate(tbAuth.getTbaEmail(), new String[] {
-					env.getProperty("services.eblo.api.psm.member"),
-					env.getProperty("services.eblo.api.psm.order"),
-					env.getProperty("services.eblo.api.psm.product"),
-					env.getProperty("services.eblo.api.psm.report")
+					env.getProperty("services.bsd.api.dms.member"),
+					env.getProperty("services.bsd.api.dms.order"),
+					env.getProperty("services.bsd.api.dms.product"),
+					env.getProperty("services.bsd.api.dms.report")
 			});
 			
 			responseModel.setStatus("200");
