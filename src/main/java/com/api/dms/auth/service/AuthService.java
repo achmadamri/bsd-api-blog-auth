@@ -41,7 +41,6 @@ public class AuthService {
 		
 		TbAuth exampleTbAuth = new TbAuth();
 		exampleTbAuth.setTbaEmail(requestModel.getTbaEmail());
-		exampleTbAuth.setTbaPassword(requestModel.getTbaPassword());
 		exampleTbAuth.setTbaStatus(TbAuthRepository.Active);
 		Optional<TbAuth> optTbAuth = tbAuthRepository.findOne(Example.of(exampleTbAuth));
 		
