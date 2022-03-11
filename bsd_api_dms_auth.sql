@@ -33,7 +33,12 @@ CREATE TABLE `tb_auth` (
   `tba_status` varchar(20) DEFAULT NULL,
   `tba_token_salt` varchar(36) DEFAULT NULL,
   `tba_role` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`tba_id`)
+  PRIMARY KEY (`tba_id`),
+  KEY `tb_auth_tba_email_index` (`tba_email`),
+  KEY `tb_auth_tba_password_index` (`tba_password`),
+  KEY `tb_auth_tba_status_index` (`tba_status`),
+  KEY `tb_auth_tba_token_salt_index` (`tba_token_salt`),
+  KEY `tb_auth_tba_tba_role_index` (`tba_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-10 16:00:19
+-- Dump completed on 2022-03-11 17:17:31
