@@ -112,7 +112,10 @@ public class AuthService {
 					env.getProperty("services.bsd.api.dms.report")
 			});
 			
+			tbAuth.setTbaUpdateDate(new Date());
+			tbAuth.setTbaUpdateId(0);
 			tbAuth.setTbaTokenSalt(TokenUtil.keyMap.get(tbAuth.getTbaEmail()));
+			tbAuthRepository.save(tbAuth);
 			
 			try {
 				requestModel.setEmail(optTbAuthByEmail.get().getTbaEmail());
