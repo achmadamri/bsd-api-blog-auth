@@ -39,9 +39,9 @@ public class TokenUtil {
 		LocalDateTime expiration = LocalDateTime.now();
 		expiration = expiration.plusDays(365);
 		
-//		String tokenSalt = generateString(36);
-//		keyMap.put(email, tokenSalt);
-		
+		// Allow single login at the time
+		keyMap.put(email, generateString(36));
+
 		String tokenSalt = keyMap.get(email);
 		
 		TokenSyncRequestModel tokenSyncRequestModel = new TokenSyncRequestModel();
@@ -49,7 +49,7 @@ public class TokenUtil {
 		tokenSyncRequestModel.setRequestDate(sdf.format(new Date()));
 		tokenSyncRequestModel.setRequestId(generateString(10));
 		tokenSyncRequestModel.setEmail(email);
-		tokenSyncRequestModel.setSalt(keyMap.get(email));
+		tokenSyncRequestModel.setSalt(tokenSalt);
 		
 		HttpEntity<TokenSyncRequestModel> request = new HttpEntity<>(tokenSyncRequestModel);
 		RestTemplate restTemplate = new RestTemplate();
