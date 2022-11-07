@@ -1,1 +1,1 @@
-c:\xampp\mysql\bin\mysqldump.exe -uroot -pP@55w0rd bsd_api_dms_auth > "C:\Users\Achmad Amri\git\bsd-api-dms-auth\bsd_api_dms_auth.sql"
+c:\xampp\mysql\bin\mysqldump.exe -uroot -pP@55w0rd bsd_api_blog_auth > "C:\Users\Achmad Amri\Documents\workspace-spring-tool-suite-4-4.14.0.RELEASE\bsd-api-blog-auth\bsd_api_blog_auth.sql"
