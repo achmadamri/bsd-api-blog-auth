@@ -39,7 +39,7 @@ CREATE TABLE `tb_auth` (
   KEY `tb_auth_tba_status_index` (`tba_status`),
   KEY `tb_auth_tba_token_salt_index` (`tba_token_salt`),
   KEY `tb_auth_tba_tba_role_index` (`tba_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `tb_auth` (
 
 LOCK TABLES `tb_auth` WRITE;
 /*!40000 ALTER TABLE `tb_auth` DISABLE KEYS */;
-INSERT INTO `tb_auth` VALUES (1,'2019-09-03 15:43:36',0,'2022-11-10 12:58:08',0,'admin@mail.com','202cb962ac59075b964b07152d234b70','active','ja1vg9ozc69nzckdxym76mu0110sfsglf7hc','ADMIN'),(16,'2022-11-10 09:46:19',0,'2022-11-10 11:36:05',0,'test@email.com','202cb962ac59075b964b07152d234b70','active','q2vgl3wgwg8e5exvz1pu6zsseifrtg4j0gvh','ADMIN');
+INSERT INTO `tb_auth` VALUES (1,'2019-09-03 15:43:36',0,'2022-11-10 13:15:57',0,'admin@mail.com','202cb962ac59075b964b07152d234b70','active','lk4w7b5pwy7ke7poay1njenn1cf1jejoe6fl','ADMIN'),(16,'2022-11-10 09:46:19',0,'2022-11-10 11:36:05',0,'test@email.com','202cb962ac59075b964b07152d234b70','active','q2vgl3wgwg8e5exvz1pu6zsseifrtg4j0gvh','ADMIN'),(17,'2022-11-10 13:24:50',0,'2022-11-10 13:24:53',0,'test2@mail.com','202cb962ac59075b964b07152d234b70','active','xww9b235ydinsy0nnvmrthtje8g4gfritcl3','ADMIN');
 /*!40000 ALTER TABLE `tb_auth` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-10 19:59:57
+-- Dump completed on 2022-11-10 20:25:30
