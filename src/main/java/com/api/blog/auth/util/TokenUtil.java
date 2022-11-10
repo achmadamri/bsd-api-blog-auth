@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import org.springframework.http.HttpEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.api.blog.auth.model.RequestModel;
@@ -17,14 +18,11 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+@Component
 public class TokenUtil {
 
-	public static HashMap<String, String> keyMap;
-
-	public TokenUtil() {
-		keyMap = new HashMap<String, String>();
-	}
-
+	public static HashMap<String, String> keyMap = new HashMap<String, String>();
+	
 	private String generateString(int length) {
 		String characters = "abcdefghijklmnopqrstuvwxyz1234567890";
 		Random rnd = new Random();

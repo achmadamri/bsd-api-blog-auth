@@ -28,7 +28,8 @@ import io.jsonwebtoken.Claims;
 @Service
 public class AuthService {
 	
-	private TokenUtil tokenUtil = new TokenUtil();
+	@Autowired
+	private TokenUtil tokenUtil;
 	
 	@Autowired
 	private Environment env;
@@ -104,9 +105,12 @@ public class AuthService {
 		exampleTbAuthByEMail.setTbaStatus(TbAuthRepository.Active);
 		Optional<TbAuth> optTbAuthByEmail = tbAuthRepository.findOne(Example.of(exampleTbAuthByEMail));
 
-		optTbAuthByEmail.ifPresentOrElse(tbAuth -> {
-			String token = tokenUtil.generate(optTbAuthByEmail.get().getTbaEmail(), new String[] {
-					env.getProperty("services.bsd.api.blog.member")
+		if (optTbAuthByEmail.isPresent()) {
+			TbAuth tbAuth = optTbAuthByEmail.get();
+			
+			String token = tokenUtil.generate(tbAuth.getTbaEmail(), new String[] {
+					env.getProperty("services.bsd.api.blog.member"),
+					env.getProperty("services.bsd.api.blog.post")
 			});
 			
 			tbAuth.setTbaUpdateDate(new Date());
@@ -127,10 +131,10 @@ public class AuthService {
 				responseModel.setStatus("500");
 				responseModel.setError(e.getMessage());
 			}
-		}, () -> {
+		} else {
 			responseModel.setStatus("401");
 			responseModel.setError("Invalid login");
-		});
+		}
 		
 		return responseModel;
 	}
